@@ -31,7 +31,7 @@ label_4.grid(column=2, row=3)
 # Button
 def convert_km():
     result = round(int(user_input.get()) / 1.609)
-    label_4["text"] = result
+    label_4["text"] = f"{result} Miles"
 
 
 button = tkinter.Button(text="Convert", command=convert_km)
