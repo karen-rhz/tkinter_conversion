@@ -2,7 +2,7 @@ import tkinter
 
 window = tkinter.Tk()
 window.title("First GUI Program")
-window.minsize(500, 500)
+window.minsize(width=500, height=200)
 window.config(padx=20, pady=20)
 
 # Label : text in the window
@@ -24,13 +24,17 @@ label_2.grid(column=2, row=2)
 label_3 = tkinter.Label(text="is equal to", font=("Space Mono", 24))
 label_3.grid(column=1, row=3)
 
-label_4 = tkinter.Label(text="RESULT", font=("Space Mono", 24))
-label_4.grid(column=1, row=4)
-
-label_5 = tkinter.Label(text="Miles", font=("Space Mono", 24))
-label_5.grid(column=2, row=4)
+label_4 = tkinter.Label(text="", font=("Space Mono", 24))
+label_4.grid(column=2, row=3)
 
 
 # Button
+def convert_km():
+    result = round(int(user_input.get()) / 1.609)
+    label_4["text"] = result
+
+
+button = tkinter.Button(text="Convert", command=convert_km)
+button.grid(column=3, row=2)
 
 window.mainloop()
